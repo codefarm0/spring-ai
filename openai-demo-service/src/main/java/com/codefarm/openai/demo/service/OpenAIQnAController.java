@@ -1,11 +1,14 @@
 package com.codefarm.openai.demo.service;
 
+import com.codefarm.openai.demo.service.model.Answer;
+import com.codefarm.openai.demo.service.model.CapitalRequest;
+import com.codefarm.openai.demo.service.model.CapitalResponse;
+import com.codefarm.openai.demo.service.model.Question;
 import com.codefarm.openai.demo.service.service.OpenAiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,5 +25,28 @@ public class OpenAIQnAController {
     String ask(@RequestBody String question) {
         log.info("getting the answer of question: " + question);
         return openAiService.getAnswer(question);
+    }
+    @PostMapping("/capital")
+    CapitalResponse getCapital(@RequestBody CapitalRequest capitalRequest) {
+        log.info("getting the capital of country: " + capitalRequest);
+        return openAiService.getCapital(capitalRequest);
+    }
+
+    @PostMapping("/capital/info")
+    CapitalResponse getCapitalWithInfo(@RequestBody CapitalRequest capitalRequest) {
+        log.info("getting the capital of country: " + capitalRequest);
+        return openAiService.getCapitalWithInfo(capitalRequest);
+    }
+
+    @PostMapping("/capital/json")
+    CapitalResponse getCapitalWithJson(@RequestBody CapitalRequest capitalRequest) {
+        log.info("getting the capital of country: " + capitalRequest);
+        return openAiService.getCapitalWithJson(capitalRequest);
+    }
+
+    @PostMapping("/capital/json/binding")
+    CapitalResponse getCapitalWithJsonBinding(@RequestBody CapitalRequest capitalRequest) {
+        log.info("getting the capital of country: " + capitalRequest);
+        return openAiService.getCapitalWithJsonBinding(capitalRequest);
     }
 }

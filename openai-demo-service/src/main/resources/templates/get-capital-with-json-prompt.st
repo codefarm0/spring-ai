@@ -1,0 +1,1 @@
+What is the capital of {country}? Respond with pure JSON object(no markdown formatting, no code blocks) containing a single property 'capital', with the name of capital as value
