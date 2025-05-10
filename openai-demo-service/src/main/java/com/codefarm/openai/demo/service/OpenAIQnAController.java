@@ -1,9 +1,6 @@
 package com.codefarm.openai.demo.service;
 
-import com.codefarm.openai.demo.service.model.Answer;
-import com.codefarm.openai.demo.service.model.CapitalRequest;
-import com.codefarm.openai.demo.service.model.CapitalResponse;
-import com.codefarm.openai.demo.service.model.Question;
+import com.codefarm.openai.demo.service.model.*;
 import com.codefarm.openai.demo.service.service.OpenAiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +42,7 @@ public class OpenAIQnAController {
     }
 
     @PostMapping("/capital/json/binding")
-    CapitalResponse getCapitalWithJsonBinding(@RequestBody CapitalRequest capitalRequest) {
+    CapitalResponseV2 getCapitalWithJsonBinding(@RequestBody CapitalRequest capitalRequest) {
         log.info("getting the capital of country: " + capitalRequest);
         return openAiService.getCapitalWithJsonBinding(capitalRequest);
     }

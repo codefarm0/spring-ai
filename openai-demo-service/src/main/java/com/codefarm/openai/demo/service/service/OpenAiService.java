@@ -1,9 +1,6 @@
 package com.codefarm.openai.demo.service.service;
 
-import com.codefarm.openai.demo.service.model.Answer;
-import com.codefarm.openai.demo.service.model.CapitalRequest;
-import com.codefarm.openai.demo.service.model.CapitalResponse;
-import com.codefarm.openai.demo.service.model.Question;
+import com.codefarm.openai.demo.service.model.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -93,9 +90,9 @@ public class OpenAiService {
         }
     }
 
-    public CapitalResponse getCapitalWithJsonBinding(CapitalRequest capitalRequest) {
+    public CapitalResponseV2 getCapitalWithJsonBinding(CapitalRequest capitalRequest) {
 
-        BeanOutputConverter<CapitalResponse> converter = new BeanOutputConverter<>(CapitalResponse.class);
+        BeanOutputConverter<CapitalResponseV2> converter = new BeanOutputConverter<>(CapitalResponseV2.class);
         String format = converter.getFormat();
         logger.info("Json format - {}", format);
         PromptTemplate promptTemplate = new PromptTemplate(capitalPromptWithJsonBinding);
