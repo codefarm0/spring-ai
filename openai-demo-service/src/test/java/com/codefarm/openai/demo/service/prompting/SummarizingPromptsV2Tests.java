@@ -1,6 +1,5 @@
-package com.learn.openai.demo.service.promptin.v2;
+package com.codefarm.openai.demo.service.prompting;
 
-import com.learn.openai.demo.service.promptin.BaseTestClass;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.prompt.PromptTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
